@@ -8,7 +8,7 @@ const projects = [
     description:
       "Personal portfolio built with React and Tailwind CSS, featuring a modern UI.",
     image: portfolio,
-    demoLink: "https://webdevsandy.vercel.app/",
+    demoLink: "https://webdevsandy.vercl.app/",
     codeLink: "#",
   },
   {
