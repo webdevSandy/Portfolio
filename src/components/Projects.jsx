@@ -28,22 +28,7 @@ const projects = [
     demoLink: "#",
     codeLink: "#",
   },
-  {
-    title: "Project 4",
-    description:
-      "A project for Documents Submission platform built with React, Tailwind CSS, Node.js and MySQL.",
-    image: "https://via.placeholder.com/400",
-    demoLink: "#",
-    codeLink: "#",
-  },
-  {
-    title: "Project 5",
-    description:
-      "A project for Documents Submission platform built with React, Tailwind CSS, Node.js and MySQL.",
-    image: "https://via.placeholder.com/400",
-    demoLink: "#",
-    codeLink: "#",
-  },
+
   // Add more projects as needed
 ];
 
@@ -72,7 +57,7 @@ const Projects = () => {
   const handleViewLess = () => {
     setViewAll(false);
     setVisibleProjects(3);
-    setCurrentIndex(0); // Reset index when switching back
+    setCurrentIndex(2); // Reset index when switching back
   };
 
   return (
