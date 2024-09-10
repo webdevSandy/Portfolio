@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between w-full bg-slate-200 z-20 lg:fixed lg:px-12">
       <a href="#AboutMe">
-        <div className="flex items-center gap-10">
+        <div className="flex items-center lg:gap-10">
           <img src={logo} alt="logo" className="h-12 mt-2" />
           <h1 className="text-2xl font-bold text-red-600">Sandy Chaudhary</h1>
         </div>
