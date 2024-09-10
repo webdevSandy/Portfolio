@@ -15,7 +15,14 @@ const Contact = () => {
       .then(
         () => {
           console.log("SUCCESS!");
-          setShowPopup(true); // Show popup when message is successfully sent
+
+          // Reset the form
+          form.current.reset();
+
+          // Delay showing the popup by 500ms (adjust as needed)
+          setTimeout(() => {
+            setShowPopup(true);
+          }, 500);
         },
         (error) => {
           console.log("FAILED...", error.text);

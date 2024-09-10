@@ -12,7 +12,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="Skills" className="pt-32 py-12 min-h-screen bg-slate-200">
+    <section id="Skills" className="lg:pt-32 py-12 min-h-screen bg-slate-200">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12 tracking-wider">
           My Skills
