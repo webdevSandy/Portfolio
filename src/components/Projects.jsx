@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-// import portfolio from "../assets/projects/portfolio.png";
-// import dss from "../assets/projects/dss.png";
+import portfolio from "../src/assets/projects/portfolio.png";
+import dss from "../src/assets/projects/dss.png";
 
 const projects = [
   {
     title: "Portfolio Website",
     description:
       "Personal portfolio built with React and Tailwind CSS, featuring a modern UI.",
-    image: "/src/assets/portfolio.png",
+    image: portfolio,
     demoLink: "https://webdevsandy.vercl.app/",
     codeLink: "#",
   },
   {
-    title: "Document Submission System",
+    title: dss,
     description:
       "A project for Documents Submission platform built with React, Tailwind CSS, Node.js and MySQL.",
     image: "/src/assets/dss.png",
