@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="Contact" className="min-h-screen pt-28 bg-slate-200 px-6">
+    <div id="Contact" className="min-h-screen mb-5 pt-20 bg-slate-200 px-6">
       <h2 className="text-3xl font-bold text-center text-gray-800 pb-10">
         Get in Touch
       </h2>
@@ -58,10 +58,10 @@ const Contact = () => {
             </li>
           </ul>
           <iframe
+            className="mt-7 h-64 w-full"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115293.28983751533!2d78.47988666110149!3d25.441094863793015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397776d458ba7703%3A0x96e9cda55c3481ca!2sJhansi%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1725642702580!5m2!1sen!2sin"
             allowFullScreen=""
             loading="lazy"
-            className="mt-7 w-96"
           ></iframe>
         </div>
 

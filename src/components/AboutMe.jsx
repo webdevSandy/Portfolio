@@ -2,8 +2,8 @@
 
 const AboutMe = () => {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+    <section id="AboutMe" className="bg-slate-200 py-16">
+      <div className="max-w-2xl mx-auto p-6 lg:mt-28  bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
         <div className="text-center">
           <img
             className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500"
