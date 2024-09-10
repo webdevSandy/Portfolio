@@ -26,7 +26,7 @@ function Navbar() {
           className="absolute left-1/2 ml-28 transform -translate-x-1/2"
         >
           <button className="px-3 py-1 rounded-full text-sm font-semibold text-red-600 border-2 border-red-600 hover:bg-red-500 hover:text-white">
-            Download CV
+            CV
           </button>
         </a>
 
@@ -57,7 +57,7 @@ function Navbar() {
       <ul
         className={`lg:flex gap-5 text-xl font-semibold lg:static ${
           isMenuOpen ? "block" : "hidden"
-        } absolute top-16 right-0 bg-red-300 w-fit rounded-lg  lg:w-auto lg:bg-transparent p-4 lg:p-0`}
+        } absolute top-16 right-0 bg-red-300 w-fit rounded-lg  lg:w-auto lg:bg-transparent lg:p-0`}
       >
         <a href="#Home">
           <li className="hover:text-red-600 cursor-pointer">Home</li>
