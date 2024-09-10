@@ -7,7 +7,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "Personal portfolio built with React and Tailwind CSS, featuring a modern UI.",
-    image: "/assets/projects/portfolio.png",
+    image: "/assets/portfolio.png",
     demoLink: "https://webdevsandy.vercl.app/",
     codeLink: "#",
   },
@@ -15,7 +15,7 @@ const projects = [
     title: "Document Submission System",
     description:
       "A project for Documents Submission platform built with React, Tailwind CSS, Node.js and MySQL.",
-    image: "/assets/projects/dss.png",
+    image: "/assets/dss.png",
     demoLink: "#",
     codeLink:
       "https://github.com/webdevSandy/DSS-Document-Submission-System-.git",
