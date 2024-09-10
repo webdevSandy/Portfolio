@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import portfolio from "../src/assets/projects/portfolio.png";
-import dss from "../src/assets/projects/dss.png";
+import portfolio from "/src/assets/projects/portfolio.png";
+import dss from "/src/assets/projects/dss.png";
 
 const projects = [
   {
@@ -12,10 +12,10 @@ const projects = [
     codeLink: "#",
   },
   {
-    title: dss,
+    title: "Document Submission System",
     description:
       "A project for Documents Submission platform built with React, Tailwind CSS, Node.js and MySQL.",
-    image: "/src/assets/dss.png",
+    image: dss,
     demoLink: "#",
     codeLink:
       "https://github.com/webdevSandy/DSS-Document-Submission-System-.git",
