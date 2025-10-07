@@ -4,12 +4,9 @@ import github from "../assets/github.png";
 import twitter from "../assets/twitter.png";
 import Typewriter from "typewriter-effect";
 import HP from "../assets/main-photo.png";
+import { myinfo } from "./Data";
 
 function Home() {
-  const info = {
-    Name: "Sandy",
-    stack: ["Frontend Developer", "React Enthusiast", "UI/UX Designer"],
-  };
   return (
     <div
       id="Home"
@@ -17,11 +14,11 @@ function Home() {
     >
       <div className="text-center w-2/3 lg:ml-44 lg:text-left">
         <h1 className="font-bold text-5xl lg:text-7xl">
-          Hi, <br /> I am {info.Name}
+          Hi, <br /> I am {myinfo.fname}
         </h1>
         <p className="font-bold text-5xl  text-red-700">
           <Typewriter
-            options={{ strings: info.stack, autoStart: true, loop: true }}
+            options={{ strings: myinfo.stack, autoStart: true, loop: true }}
           />
         </p>
         <div className="flex gap-10 lg:gap-20 mt-10 lg:mt-20 justify-center lg:justify-start">
@@ -33,7 +30,7 @@ function Home() {
             <img src={insta} alt="instagram" className="h-8 lg:h-10" />
           </a>
           <a
-            href="https://www.linkedin.com/in/webdevsandy/"
+            href="https://www.linkedin.com/in/developer-sandy/"
             target="_blank"
             rel="noopener noreferrer"
           >
