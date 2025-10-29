@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-2">
+    <footer className="bg-gray-800 text-white py-4 ">
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center mb-4">
           <a
@@ -30,7 +30,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-sm text-gray-400 mb-2">
-          &copy; {new Date().getFullYear()} 2023 webdevSandy. All rights reserved.
+          &copy;2023 - {new Date().getFullYear()} webdevSandy. All rights reserved.
         </p>
         <p className="text-sm">
           Built with ❤️ by <span className="font-semibold">Sandy Chaudhary</span>

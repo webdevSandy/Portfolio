@@ -19,10 +19,10 @@ const Contact = () => {
           // Reset the form
           form.current.reset();
 
-          // Delay showing the popup by 500ms (adjust as needed)
+          // Delay showing the popup by 300ms (adjusted)
           setTimeout(() => {
             setShowPopup(true);
-          }, 500);
+          }, 300);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -35,8 +35,8 @@ const Contact = () => {
   };
 
   return (
-    <div id="Contact" className="min-h-screen mb-5 pt-20 bg-slate-200 px-6">
-      <h2 className="text-3xl font-bold text-center text-gray-800 pb-10">
+    <div id="Contact" className="min-h-screen mb-5 pt-20 pb-20 px-6">
+      <h2 className="text-3xl font-bold text-center text-gray-800 pb-10 tracking-widest">
         Get in Touch
       </h2>
 
@@ -48,7 +48,8 @@ const Contact = () => {
           </h3>
           <ul className="space-y-4">
             <li>
-              <strong>Email:</strong> contact.sandychaudhary@gmail.com
+              <strong>Email:</strong> contact.sandychaudhary@gmail.com <br />
+              <strong>Email:</strong> developer.sandychaudhary@gmail.com
             </li>
             <li>
               <strong>Phone:</strong> +91 7355511311
@@ -72,17 +73,33 @@ const Contact = () => {
         >
           <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              name="from_name"
-              required
-              className="w-full shadow-lg px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              placeholder="Enter your name"
-            />
+          <div className="flex gap-2">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                name="from_name"
+                required
+                className="w-full shadow-lg px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="Enter your name"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Mobile
+              </label>
+              <input
+                type="tel"
+                pattern="[0-9]{10}"
+                name="from_phone"
+                required
+                className="w-full shadow-lg px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="Enter your Mobile Number"
+              />
+            </div>
           </div>
 
           <div className="mb-4">
@@ -123,14 +140,30 @@ const Contact = () => {
         {/* Popup Modal */}
         {showPopup && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center">
-              <h3 className="text-lg font-bold mb-4">Message Sent!</h3>
+            <div className="bg-white rounded-xl shadow-lg p-8 max-w-sm text-center transform transition-all duration-300 ease-in-out scale-100">
+              <svg
+                className="mx-auto mb-4 w-12 h-12 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 12l2 2 4-4m0 0a9 9 0 11-6.364-2.636 9 9 0 016.364 2.636z"
+                ></path>
+              </svg>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                Message Sent!
+              </h3>
               <p className="text-gray-700 mb-4">
                 Your message has been successfully sent.
               </p>
               <button
                 onClick={closePopup}
-                className="bg-red-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+                className="bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors focus:ring-4 focus:ring-red-500 focus:ring-opacity-50"
               >
                 Close
               </button>

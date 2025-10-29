@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 import HP from "../assets/main-photo.png";
 import { myinfo } from "./Data";
 
-function Home() {
+function Hero() {
   return (
     <div
       id="Home"
@@ -21,7 +21,7 @@ function Home() {
             options={{ strings: myinfo.stack, autoStart: true, loop: true }}
           />
         </p>
-        <div className="flex gap-10 lg:gap-20 mt-10 lg:mt-20 justify-center lg:justify-start">
+        <div className="flex gap-10 lg:gap-20 mt-10 lg:mt-20 justify-center lg:justify-start drop-shadow-lg">
           <a
             href="https://www.instagram.com/sandy_chaudhary_._/"
             target="_blank"
@@ -61,4 +61,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Hero;

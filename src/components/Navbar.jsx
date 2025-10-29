@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
+import db from "../assets/db.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,11 +10,13 @@ function Navbar() {
   };
 
   return (
-    <div className="flex items-center justify-between w-full bg-slate-200 z-20 lg:fixed lg:px-12">
+    <div className="flex items-center gap-[270px] justify-between z-20 border rounded-full backdrop-blur-2xl my-2 px-2 lg:fixed lg:mx-7 shadow-lg lg:w-auto">
       <a href="#AboutMe">
-        <div className="flex items-center lg:gap-10">
+        <div className="flex items-center lg:gap-2">
           <img src={logo} alt="logo" className="h-12 mt-2" />
-          <h1 className="text-2xl font-bold text-red-600">Sandy Chaudhary</h1>
+          <h1 className="text-lg lg:text-2xl w-64 font-bold text-red-600 ">
+            Sandy Chaudhary
+          </h1>
         </div>
       </a>
 
@@ -21,13 +24,12 @@ function Navbar() {
       <div className="lg:hidden flex items-center">
         {/* Download CV Button (Centered on small screens) */}
         <a
-          href="https://drive.google.com/file/d/1kCUCWIeF49Bw-NX9vsq-0_6yVnV51osI/view?usp=sharing"
+          href="https://drive.google.com/file/d/1_92-AQeYF8RctZy9PbQrdqpuiSbvSuM8/view?usp=sharing"
           target="_blank"
-          className="absolute left-1/2 ml-28 transform -translate-x-1/2"
+          className="absolute flex gap-1 left-1/2 ml-28 w-fit p-1 transform -translate-x-1/2 border-2 border-red-500 rounded-full text-red-700"
         >
-          <button className="px-3 py-1 rounded-full text-sm font-semibold text-red-600 border-2 border-red-600 hover:bg-red-500 hover:text-white">
-            CV
-          </button>
+          <h2 className="font-Ubuntu font-bold">CV</h2>
+          <img src={db} alt="" className="h-6 " />
         </a>
 
         <button
@@ -55,33 +57,36 @@ function Navbar() {
 
       {/* Menu Items */}
       <ul
-        className={`lg:flex gap-5 text-xl font-semibold lg:static ${
+        className={`lg:flex gap-2 text-xl font-medium lg:static ${
           isMenuOpen ? "block" : "hidden"
         } absolute top-16 right-0 bg-red-300 w-fit rounded-lg  lg:w-auto lg:bg-transparent lg:p-0`}
       >
         <a href="#Home">
-          <li className="hover:text-red-600 cursor-pointer">Home</li>
+          <li className="hover:text-red-700 cursor-pointer">Home</li>
         </a>
+        <span className="hidden lg:inline">|</span>
         <a href="#Skills">
-          <li className="hover:text-red-600 cursor-pointer">Skills</li>
+          <li className="hover:text-red-700 cursor-pointer">Skills</li>
         </a>
+        <span className="hidden lg:inline">|</span>
         <a href="#Projects">
-          <li className="hover:text-red-600 cursor-pointer">Projects</li>
+          <li className="hover:text-red-700 cursor-pointer">Projects</li>
         </a>
+        <span>|</span>
         <a href="#Contact">
-          <li className="hover:text-red-600 cursor-pointer">Contact</li>
+          <li className="hover:text-red-700 cursor-pointer">Contact</li>
         </a>
       </ul>
 
       {/* Buttons (Hide on small screens) */}
       <div className="hidden lg:flex">
-        <a href="#">
-          <button className="px-3 py-1 rounded-full text-xl font-semibold text-red-600 border-2 border-red-600 hover:bg-red-500 hover:text-white">
+        <a href="mailto:developer.sandychaudhary@gmail.com" target="_blank">
+          <button className="px-3 py-1 rounded-full text-xl font-semibold text-red-600 border-2 border-red-600 hover:bg-red-500 hover:text-white ">
             Hire Me
           </button>
         </a>
         <a
-          href="https://drive.google.com/file/d/1kCUCWIeF49Bw-NX9vsq-0_6yVnV51osI/view?usp=sharing"
+          href="https://drive.google.com/file/d/1_92-AQeYF8RctZy9PbQrdqpuiSbvSuM8/view?usp=sharing"
           target="_blank"
         >
           <button className="px-3 lg:py-1 ml-4 rounded-full text-xl font-semibold text-red-600 border-2 border-red-600 hover:bg-red-500 hover:text-white">
