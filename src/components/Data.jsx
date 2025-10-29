@@ -139,16 +139,16 @@ export const projects = [
       "https://via.placeholder.com/400x700?text=Mobile+Screen+2",
     ],
   },
-  {
-    title: "UI Design for Webapsdsdsp",
-    description: "A modern mobile app UI design created in Figma and Adobe XD.",
-    image: "https://via.placeholder.com/400x250?text=UI+Design",
-    demoLink: "#",
-    role: "Design",
-    designImages: [
-      "https://via.placeholder.com/400x700?text=Web+App+1",
-      "https://via.placeholder.com/400x700?text=Web+App+2",
-    ],
-  },
+  // {
+  //   title: "UI Design for Webapsdsdsp",
+  //   description: "A modern mobile app UI design created in Figma and Adobe XD.",
+  //   image: "https://via.placeholder.com/400x250?text=UI+Design",
+  //   demoLink: "#",
+  //   role: "Design",
+  //   designImages: [
+  //     "https://via.placeholder.com/400x700?text=Web+App+1",
+  //     "https://via.placeholder.com/400x700?text=Web+App+2",
+  //   ],
+  // },
   // Add more projects similarly
 ];
