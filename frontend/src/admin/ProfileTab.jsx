@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User, Upload, Loader2, Plus, Trash2, Edit2, Shield, Lock, Send, Check, FileText } from 'lucide-react';
+import API_URL from '../utils/api';
 
 export default function ProfileTab() {
   // State for profile settings
@@ -41,7 +42,7 @@ export default function ProfileTab() {
 
   useEffect(() => {
     // Fetch profile data
-    fetch('http://localhost:5000/api/profile')
+    fetch(`${API_URL}/api/profile`)
       .then(res => res.json())
       .then(data => data && setProfile({
         name: data.name || '',
@@ -59,7 +60,7 @@ export default function ProfileTab() {
       }));
 
     // Fetch 2FA status
-    fetch('http://localhost:5000/api/auth/2fa', {
+    fetch(`${API_URL}/api/auth/2fa`, {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
     })
       .then(res => res.json())
@@ -87,7 +88,7 @@ export default function ProfileTab() {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:5000/api/upload', {
+      const res = await fetch(`${API_URL}/api/upload`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -126,7 +127,7 @@ export default function ProfileTab() {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:5000/api/profile/resume', {
+      const res = await fetch(`${API_URL}/api/profile/resume`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -161,7 +162,7 @@ export default function ProfileTab() {
     setResumeError('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/profile/resume', {
+      const res = await fetch(`${API_URL}/api/profile/resume`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -192,7 +193,7 @@ export default function ProfileTab() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/profile', {
+      const res = await fetch(`${API_URL}/api/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -253,7 +254,7 @@ export default function ProfileTab() {
     setSecurityMessage('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/2fa', {
+      const res = await fetch(`${API_URL}/api/auth/2fa`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -280,7 +281,7 @@ export default function ProfileTab() {
     setSecurityMessage('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/request-password-otp', {
+      const res = await fetch(`${API_URL}/api/auth/request-password-otp`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
       });
@@ -308,7 +309,7 @@ export default function ProfileTab() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/change-password', {
+      const res = await fetch(`${API_URL}/api/auth/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

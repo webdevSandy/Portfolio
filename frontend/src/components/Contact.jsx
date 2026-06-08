@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { Loader2, Mail, Send } from "lucide-react";
+import API_URL from '../utils/api';
 
 export default function Contact() {
   const root = useRef(null);
@@ -16,7 +17,7 @@ export default function Contact() {
     setSent(false);
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

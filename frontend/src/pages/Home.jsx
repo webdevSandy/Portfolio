@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import API_URL from '../utils/api';
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
 import Projects from "../components/Projects.jsx";
@@ -13,10 +14,10 @@ export default function Home() {
 
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:5000/api/profile').then(res => res.json()),
-      fetch('http://localhost:5000/api/projects').then(res => res.json()),
-      fetch('http://localhost:5000/api/skills').then(res => res.json()),
-      fetch('http://localhost:5000/api/experience').then(res => res.json()),
+      fetch(`${API_URL}/api/profile`).then(res => res.json()),
+      fetch(`${API_URL}/api/projects`).then(res => res.json()),
+      fetch(`${API_URL}/api/skills`).then(res => res.json()),
+      fetch(`${API_URL}/api/experience`).then(res => res.json()),
     ]).then(([profile, projects, skills, experience]) => {
       setData({ profile, projects, skills, experience });
     });

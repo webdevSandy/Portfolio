@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import API_URL from '../utils/api';
 
 export default function SkillsTab() {
   const [skills, setSkills] = useState([]);
@@ -7,7 +8,7 @@ export default function SkillsTab() {
   const [itemValue, setItemValue] = useState('');
   const [editId, setEditId] = useState(null);
 
-  const fetchSkills = () => fetch('http://localhost:5000/api/skills').then(res => res.json()).then(setSkills);
+  const fetchSkills = () => fetch(`${API_URL}/api/skills`).then(res => res.json()).then(setSkills);
   useEffect(() => { fetchSkills(); }, []);
 
   const handleAddItem = (e) => {
@@ -25,7 +26,7 @@ export default function SkillsTab() {
   const handleSaveSkillGroup = async () => {
     if (!form.title || form.items.length === 0) return;
     
-    const url = editId ? `http://localhost:5000/api/skills/${editId}` : 'http://localhost:5000/api/skills';
+    const url = editId ? `${API_URL}/api/skills/${editId}` : `${API_URL}/api/skills`;
     const method = editId ? 'PUT' : 'POST';
 
     await fetch(url, {
@@ -49,7 +50,7 @@ export default function SkillsTab() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/skills/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
+    await fetch(`${API_URL}/api/skills/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
     fetchSkills();
   };
 

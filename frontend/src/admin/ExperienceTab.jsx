@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+import API_URL from '../utils/api';
 
 export default function ExperienceTab() {
   const [experiences, setExperiences] = useState([]);
   const [form, setForm] = useState({ role: '', company: '', date: '', desc: '' });
   const [editId, setEditId] = useState(null);
 
-  const fetchExp = () => fetch('http://localhost:5000/api/experience').then(res => res.json()).then(setExperiences);
+  const fetchExp = () => fetch(`${API_URL}/api/experience`).then(res => res.json()).then(setExperiences);
   useEffect(() => { fetchExp(); }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = editId ? `http://localhost:5000/api/experience/${editId}` : 'http://localhost:5000/api/experience';
+    const url = editId ? `${API_URL}/api/experience/${editId}` : `${API_URL}/api/experience`;
     const method = editId ? 'PUT' : 'POST';
 
     await fetch(url, {
@@ -29,7 +30,7 @@ export default function ExperienceTab() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/experience/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
+    await fetch(`${API_URL}/api/experience/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
     fetchExp();
   };
 

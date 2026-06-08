@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Image, Upload, Link as LinkIcon, Trash2, Loader2 } from 'lucide-react';
+import API_URL from '../utils/api';
 
 export default function ProjectsTab() {
   const [projects, setProjects] = useState([]);
@@ -10,7 +11,7 @@ export default function ProjectsTab() {
   const [uploadError, setUploadError] = useState('');
   const [uploadTab, setUploadTab] = useState('upload'); // 'upload' | 'url'
 
-  const fetchProjects = () => fetch('http://localhost:5000/api/projects').then(res => res.json()).then(setProjects);
+  const fetchProjects = () => fetch(`${API_URL}/api/projects`).then(res => res.json()).then(setProjects);
   useEffect(() => { fetchProjects(); }, []);
 
   const handleFileUpload = async (e) => {
@@ -30,7 +31,7 @@ export default function ProjectsTab() {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:5000/api/upload', {
+      const res = await fetch(`${API_URL}/api/upload`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -61,7 +62,7 @@ export default function ProjectsTab() {
     }
     const payload = { ...form, tech: typeof form.tech === 'string' ? form.tech.split(',').map(t => t.trim()) : form.tech };
     
-    const url = editId ? `http://localhost:5000/api/projects/${editId}` : 'http://localhost:5000/api/projects';
+    const url = editId ? `${API_URL}/api/projects/${editId}` : `${API_URL}/api/projects`;
     const method = editId ? 'PUT' : 'POST';
 
     await fetch(url, {
@@ -86,7 +87,7 @@ export default function ProjectsTab() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/projects/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
+    await fetch(`${API_URL}/api/projects/${id}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` } });
     fetchProjects();
   };
 
