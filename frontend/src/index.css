@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* light/dark base */
+:root { 
+  color-scheme: light dark; 
+}
+html, body {
+  @apply bg-neutral-50 text-neutral-900 transition-colors duration-300;
+}
+.dark body {
+  @apply bg-neutral-950 text-neutral-100;
+}
+
+/* anchor focus */
+a, button { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 rounded-md; }
+
+/* sections offset for fixed navbar */
+section { @apply scroll-mt-24; }
