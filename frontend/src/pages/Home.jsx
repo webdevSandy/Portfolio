@@ -11,6 +11,7 @@ import Footer from "../components/Footer.jsx";
 
 export default function Home() {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     Promise.all([
@@ -20,9 +21,13 @@ export default function Home() {
       fetch(`${API_URL}/api/experience`).then(res => res.json()),
     ]).then(([profile, projects, skills, experience]) => {
       setData({ profile, projects, skills, experience });
+    }).catch(err => {
+      console.error('API fetch error:', err);
+      setError(err.message);
     });
   }, []);
 
+  if (error) return <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center text-xl text-red-500">Failed to load data: {error}</div>;
   if (!data) return <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center text-xl text-neutral-500 animate-pulse">Loading data...</div>;
 
   return (
