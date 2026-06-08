@@ -55,13 +55,13 @@ export default function Navbar({ profile }) {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/#home" className="text-xl font-bold tracking-tight">Sandy.</a>
-        
+
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.id}
-              href={link.href} 
+              href={link.href}
               className={`transition-colors hover:text-emerald-500 ${activeSection === link.id ? "text-emerald-500" : "text-neutral-600 dark:text-neutral-300"}`}
             >
               {link.name}
@@ -73,19 +73,19 @@ export default function Navbar({ profile }) {
         {/* Theme Toggle & Mobile Menu Trigger */}
         <div className="flex items-center gap-2 md:gap-4">
           {profile?.resumeUrl && (
-            <a 
-              href={profile.resumeUrl} 
+            <a
+              href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
               download
-              className="flex items-center gap-1.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 px-3 py-1.5 text-xs md:text-sm font-semibold text-neutral-700 dark:text-neutral-200 transition hover:-translate-y-0.5 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/50 dark:hover:border-emerald-500/50"
+              className="flex items-center gap-1.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 px-3 py-1.5 text-xs md:text-sm font-semibold text-neutral-700 dark:text-neutral-200 transition hover:-translate-y-0.5 hover:bg-emerald-500 hover:text-white dark:hover:text-emerald-400 hover:border-emerald-500/50 dark:hover:border-emerald-500/50"
             >
               <Download className="w-3.5 h-3.5 text-emerald-500" />
               <span className="hidden sm:inline">Resume</span>
             </a>
           )}
-          <button 
-            onClick={toggleTheme} 
+          <button
+            onClick={toggleTheme}
             className="rounded-full p-2 text-neutral-600 transition-colors hover:bg-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-800"
             aria-label="Toggle Theme"
           >
@@ -95,7 +95,7 @@ export default function Navbar({ profile }) {
               </svg>
             ) : (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
               </svg>
             )}
           </button>
@@ -111,7 +111,7 @@ export default function Navbar({ profile }) {
         <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 px-6 py-4 shadow-xl">
           <div className="flex flex-col gap-4 text-base font-medium">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.id}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
